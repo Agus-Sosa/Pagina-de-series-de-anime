@@ -1,0 +1,74 @@
+.container-portada {
+    color: white;
+    article {
+        height: 600px;
+        overflow: hidden;
+    }
+    img {
+        width: 100%;
+    }
+
+    h2 {
+        width: 50%;
+        margin: -448px 60px 35px;
+        font-size: 30px;
+    }
+    p {
+        width: 30%;
+        font-size: 24px;
+        display: flex;
+        margin-left: 60px;
+    }
+    button {
+        padding: 25px 51px;
+        background: #FA4753;
+        margin: 63px 56px;
+        text-decoration: none;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 0 10px black;
+        transition: .4s all;
+
+        a {
+            text-decoration: none; 
+            color: white;
+            font-size: 21px;
+        }
+
+    }
+
+    button:hover {
+        transform: scale(1.02);
+        opacity: 80%;
+    }
+}
+
+.container-productos {
+    
+
+    h2 {
+        color: white;
+        margin: 45px 35px;
+    }
+
+    a {
+        width: 312px;
+        display: inline-block;
+        margin: 0px 34px;
+        transition: .4s all;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 5px 4px 10px black;
+        }
+    }
+
+    a:hover {
+        transform: scale(1.02);
+        opacity: 80%;
+
+    }
+}
+
+

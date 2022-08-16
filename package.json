@@ -1,0 +1,25 @@
+{
+  "name": "pagina-de-anime2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node-sass --include-path scss sass/index.scss css/style.css",
+    "watch-sass": "nodemon -e scss -x \"npm run build-sass\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agus-Sosa/Pagina-de-series-de-anime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agus-Sosa/Pagina-de-series-de-anime/issues"
+  },
+  "homepage": "https://github.com/Agus-Sosa/Pagina-de-series-de-anime#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
