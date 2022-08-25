@@ -1,0 +1,74 @@
+footer {
+    height: 400px;
+    background: #1a1b1f;
+    border-top: solid 2px;
+    box-shadow: inset 0px 4px 20px black;
+
+    h2 {
+        color: white;
+        display: flex;
+        justify-content: center;
+        margin: 43px 547px;
+        border-bottom: solid 4px $primary;
+        
+
+        aside {
+            color: #FA4753;
+            margin-left: 10px;
+        }
+    }
+
+    ul {
+        display: inline-flex;
+        justify-content: left;
+        flex-direction: column;
+
+        h3 {
+            color: white;
+            margin: auto;
+            border-bottom: solid 3px $primary;
+        }
+        li {
+            color: white;
+            margin: 25px 37px;
+            list-style-type: none;
+            font-size: 20px;
+        }
+
+        i {
+            margin-right: 10px;
+            font-size: 25px;
+        }
+    }
+
+    
+}
+
+
+
+.redes-sociales {
+    
+    display: inline-flex;
+    float: right;
+
+    h3 {
+        color: white;
+        margin: 10px;
+        margin-right: 30px;
+        border-bottom: solid 3px  $primary;
+    }
+
+
+
+    i {
+        color: white;
+        font-size: 26px;
+        transition: .4s color;
+    }
+
+    i:hover {
+        color: $primary;
+
+    }
+}
+

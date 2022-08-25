@@ -9,8 +9,8 @@
     }
 
     h2 {
-        width: 50%;
-        margin: -448px 60px 35px;
+        display: flex;
+        margin: -468px 60px 35px;
         font-size: 30px;
     }
     p {
@@ -19,33 +19,39 @@
         display: flex;
         margin-left: 60px;
     }
-    button {
-        padding: 25px 51px;
-        background: #FA4753;
-        margin: 63px 56px;
+    a {
         text-decoration: none;
-        border-radius: 20px;
-        border: none;
-        box-shadow: 0 0 10px black;
-        transition: .4s all;
-
-        a {
-            text-decoration: none; 
-            color: white;
-            font-size: 21px;
-        }
-
+        color: white;
+        font-size: 21px;
+        display: flex;
     }
+    
+        button {
+            padding: 21px 79px;
+            background: #FA4753;
+            margin: 63px 56px;
+            text-decoration: none;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 0 10px black;
+            transition: .4s all;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 27px;
+        }
+    
 
     button:hover {
-        transform: scale(1.02);
-        opacity: 80%;
+        color: black;
+
+        opacity: 90%;
     }
 }
 
 .container-productos {
     
-
+    margin-bottom: 47px;
     h2 {
         color: white;
         margin: 45px 35px;
@@ -71,4 +77,50 @@
     }
 }
 
+
+.container-button {
+    display: flex;
+    a {
+        margin: 136px 31px;
+    background: #FA4753;
+    padding: 40px 99px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 black;
+    transition: .5s all;
+    
+
+}
+    a:hover {
+        color: black;
+        opacity: 90%;
+
+    }
+}
+
+.container-button a:nth-child(2) {
+    background: none;
+    border: solid $primary;
+}
+
+.container-serie {
+
+    h2 {
+        color: white;
+        margin: 30px 30px;
+    }
+
+    iframe {
+        margin: 0px 28px;
+        width: 824px;
+        border-radius: 20px;
+        height: 465px;
+    }
+
+    p {
+        color: white;
+        font-size: 24px;
+        margin: 10px 30px;
+
+    }
+}
 

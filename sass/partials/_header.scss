@@ -1,26 +1,93 @@
-ul {
-    display: flex;
-    justify-content: center;
+header {
+    border-bottom: solid $primary;
 }
 
-li {
-    margin: 10px 18px;
-    padding: 32px 40px;
-    color: white;
-    text-decoration: none;
-    list-style-type: none;
-    border-radius: 20px;
-    transition: .4s all;
-    a {
-        text-decoration: none;
+nav {
+
+    ul {
+        display: inline-flex;
+        justify-content: center;
+        h1 {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            margin: 35px 20px;
+            
+            aside {
+                margin: 10px;
+                color: #FA4753;
+            }
+        }
+
+        // h1:before {
+        //     border-bottom: solid $primary;
+        //     content: "";
+        //     left: 0px;
+        //     position: absolute;
+        //     transition: .5 all;
+        //     transform: scaleX(0);
+        // }
+        
+        // h1:hover:before {
+        //     transform: scaleX(1);
+        // }
+    }
+    
+    li {
+        margin: 50px 57px;
         color: white;
+        text-decoration: none;
+        list-style-type: none;
+        border-radius: 20px;
         transition: .4s all;
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 32px 40px;
+            font-weight: bold;
+            transition: .4s all;
+            border-radius: 20px;
+            
+        }
+    }
+
+    
+    a:hover {
+        background: #FA4753;
+        transform: scale(1.05);
+        box-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753;
+        color: $secondary;
     }
 }
 
-li:hover {
-    background: #FA4753;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753;
+
+
+// navegacion de categorias 
+
+
+
+.submenu a {
+    color: white;
+    display: inline;
+    padding: 30px 40px;
 }
 
+.submenu a:hover {
+    color: white;
+}
+
+.submenu li a {
+    border-radius: 0px;
+}
+
+
+.submenu li a:hover {
+    background: none;
+    box-shadow: none;
+    border-bottom:  solid #FA4753;
+}
+
+.submenu ul {
+    background-color: $secondary;
+    border-radius: 10px;
+}
