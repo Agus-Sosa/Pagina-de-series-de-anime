@@ -1,7 +1,7 @@
 
 
 .main-login {
-    background: url(https://i.pinimg.com/originals/e3/3e/ab/e33eab054edcf009adc60287aa954587.jpg);
+    background: url(https://i.ytimg.com/vi/lTRiuFIWV54/maxresdefault.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -31,13 +31,14 @@
         justify-content: center;
         a {
             margin: 17px;
-            font-size: 33px;
+            font-size: 43px;
             transition: .5s;
         }
     
     a:hover {
         color: $primary;
-        
+        transform: rotateZ(-10deg);
+        text-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753;;
     }
     }
 
@@ -54,20 +55,27 @@
     }
 
     input {
-        margin: 36px 0px;
+        margin: 22px 0px;
         background-color: #FA4753;
         padding: 11px 34%;
+        font-weight: bold;
         font-size: 15px;
+        margin-bottom: 50px;
         color: white;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     input:hover {
         border: none;
         background-color: $primary;
     }
-    
+    input:focus {
+        outline: none;
+        box-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753;
+        border: solid 2px $primary;
+    }
     a {
         color: lightgray;
         text-decoration: none;
@@ -99,8 +107,38 @@
     }
     button:hover {
         color: white;
-        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    }
-
-
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+    
+    }
+    button:active {
+        transform: scale(0.5);
+    }
+    
 }
 
+@media screen and (max-width: 800px) and (min-width:320px) {
+    .container-form {
+        margin: auto;
+        margin: 39px auto;
+        padding: 30px;
+        h2 {
+            font-size: 17px;
+        }
+
+        label {
+            font-size: 17px;
+        }
+        input {
+            padding: 11px 30%;
+        }
+    }
+}
+
+
+@media screen and (min-width:801px) and (max-width:1200px) {
+    .container-form {
+        margin: auto;
+        margin: 46px auto;
+        padding: 30px;
+    }
+}

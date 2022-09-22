@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Anime, Series, Entretenimiento">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/004/967/183/non_2x/anime-eyes-vision-fire-pop-culture-logo-design-vector.jpg">
     <link rel="stylesheet" href="css/style.css">
@@ -15,23 +16,46 @@
             <ul class="menu">
                 <h1>Yunosha <aside>Anime</aside></h1>
                 <li><a href="#">Home</a></li>
-                <li><a href="pages/categoria/accion.html">Accion</a></li> 
-                <li><a href="pages/categoria/aventura.html">Aventura</a></li> 
-                <li><a href="pages/categoria/drama.html">Drama</a></li> 
-                <li><a href="pages/contacto.html">Iniciar Sesion</a></li>
+                <div class="dropdown-menu">
+                    <span>Categoria <i class="fa-solid fa-angle-down"></i></span>
+                    <ul>
+                        <li><a href="pages/categoria/accion.html">Accion</a></li> 
+                    <li><a href="pages/categoria/aventura.html">Aventura</a></li> 
+                    <li><a href="pages/categoria/drama.html">Drama</a></li> 
+                    </ul>
+                </div>
+                <div class="nav-search">
+                    <span>
+                        <i class="fa-solid fa-search"></i>
+                    </span>
+                    <input type="search" placeholder="Buscar">
+
+                </div>
+            </ul>
+            <ul class="nav-login">
+                <li><a href="pages/contacto.html">Contacto</a></li>
+                <li><a href="pages/login.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </nav>
     </header>
     <main>
+            <a href="pages/sub.html" class="button-subs">
+                <span>Suscribirse</span>
+
+            </a>
+        
+        
         <section class="container-portada">
             <article>
-                <img src="https://images.reporteindigo.com/wp-content/uploads/2021/09/DemonSlayerSEGA_00.png" alt="">
+                <img src="https://en.free-wallpapers.su/data/media/3/big/anm8129.jpg" alt="">
             </article>
-            <h2>Demon Slayer: Kimetsu no Yaiba</h2>
-            <p>Demon Slayer: Kimetsu no Yaiba, Guardianes de la noche en España, nos presenta a Kamado Tanjiro, un chico joven, 
-                bastante inteligente y con un corazón que no le abe en el pecho. Este vive son su familia y gana dinero vendien</p>
-                <a href=""><button>Ver Ahora</button></a>
-            </section>
+            <div class="info-portada">
+                <h2>Demon Slayer: Kimetsu no Yaiba</h2>
+                <!-- <p>Demon Slayer: Kimetsu no Yaiba, Guardianes de la noche en España, nos presenta a Kamado Tanjiro, un chico joven, 
+                    bastante inteligente y con un corazón que no le abe en el pecho. Este vive son su familia y gana dinero vendien</p> -->
+                    <a href=""><button>Ver Ahora</button></a>
+                </div>
+                </section>
         <section class="container-productos">
             <h2>Tendencia</h2>
             <a href="">
@@ -56,7 +80,7 @@
                 <img src="https://img1.ak.crunchyroll.com/i/spire4/9c6619e957a33dea39079575f398141f1649520741_main.jpg" alt="">
             </a>
             <a href="">
-                <img src="https://m.media-amazon.com/images/M/MV5BMWQ1ZmEzZDgtYTBmNC00M2I2LWFmZjQtOWU1OGJkODE1OTUwXkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_.jpg" alt="">
+                <img src="https://img1.ak.crunchyroll.com/i/spire4/727a407a607f1ddcc1789ed995beddd01658530970_main.jpg" alt="">
             </a>
         </section>
     </main>

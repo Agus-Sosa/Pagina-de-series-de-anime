@@ -72,3 +72,48 @@ footer {
     }
 }
 
+@media screen and (max-width: 800px) and (min-width: 320px) {
+    footer {
+        width: 100%;
+
+        h2 {
+            margin: auto;
+            border-bottom: none;
+            margin-top: 17px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+
+        ul {
+            margin: 42px 0px;
+            
+            li {
+                font-size: 18px;
+                }
+            i {
+                font-size: 18px;
+            }
+        }
+        
+    }
+
+    .redes-sociales {
+        i {
+            font-size: 24px;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 801px) and (max-width:1200px) {
+    footer {
+        width: 100%;
+        h2 {
+            margin: auto;
+            border-bottom: none;
+            margin-top: 20px;
+        }
+    }
+}

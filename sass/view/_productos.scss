@@ -9,44 +9,53 @@
     }
 
     h2 {
-        display: flex;
-        margin: -468px 60px 35px;
-        font-size: 30px;
+        display: inline-block;
+        font-size: 31px;
+        margin: 61px 35px;
     }
     p {
-        width: 30%;
+        width: 72%;
         font-size: 24px;
-        display: flex;
-        margin-left: 60px;
+        display: inline-block;
+        margin: 15px 35px;
     }
     a {
         text-decoration: none;
         color: white;
         font-size: 21px;
         display: flex;
+        float: right;
+        justify-content: end;
     }
     
         button {
-            padding: 21px 79px;
+            padding: 21px 66px;
             background: #FA4753;
-            margin: 63px 56px;
             text-decoration: none;
             border-radius: 20px;
             border: none;
-            box-shadow: 0 0 10px black;
-            transition: .4s all;
-            color: white;
+            box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;            
             font-weight: bold;
             cursor: pointer;
-            font-size: 27px;
+            margin-right: 46px;
+            margin-top: 50px;
+            transition: .4s all;
         }
     
 
     button:hover {
-        color: black;
-
+        color: white;
         opacity: 90%;
     }
+
+    button:active {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+}
+
+.info-portada {
+
+    box-shadow: 0px 5px 46px black;
 }
 
 .container-productos {
@@ -55,6 +64,7 @@
     h2 {
         color: white;
         margin: 45px 35px;
+        margin-bottom: 30px;
     }
 
     a {
@@ -73,6 +83,7 @@
     a:hover {
         transform: scale(1.02);
         opacity: 80%;
+
 
     }
 }
@@ -124,3 +135,110 @@
     }
 }
 
+.button-subs {
+    position: fixed;
+    background: $primary;
+    display: flex;
+    padding: 27px 50px;
+    right: 47px;
+    font-weight: bold;
+    box-shadow: 10px 10px 10px black;
+    bottom: 33px;
+    border-radius: 19px;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: 1s all;
+    
+}
+
+
+.button-subs:hover {
+    transform: scale(1.04);
+    color: white;
+    
+}
+
+
+
+@media screen and (min-width:320px) and (max-width: 800px) {
+    .container-portada {
+        article {
+            height: 100%;
+        }
+
+
+    }
+    
+    .info-portada {
+        height: 123px;
+        
+        h2 {
+            font-size: 14px;
+        
+        }
+    
+    
+        p {
+            font-size: 14px;
+            width: 100%;
+        }
+    
+        button {
+            font-size: 10px;
+            padding: 12px 24px;
+            border-radius: 10px;
+        }
+    }
+
+    .container-productos {
+        h2 {
+            margin: 23px 15px;
+            font-size: 14px;
+        }
+    
+        a {
+            width: 154px;
+            margin: 0px 15px;
+        }
+}
+}
+
+
+@media screen and (min-width: 801px) and (max-width:1200px)  {
+
+    .container-portada {
+        article {
+            height: 100%;
+            
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 15px;
+            
+        }
+
+    }
+
+    
+    .container-productos {
+    
+        h2 {
+            font-size: 20px;
+            margin: 45px 15px;
+        }
+    
+        a {
+            width: 180px;
+            margin: 0px 15px;
+        }
+    }
+}
