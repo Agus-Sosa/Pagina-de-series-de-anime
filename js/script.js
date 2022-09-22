@@ -67,7 +67,3 @@ while(Respuesta.toUpperCase() != 'ESC') {
 
 
 }
-
-
-
-function RespuestaNo() {}
