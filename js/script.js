@@ -38,12 +38,12 @@ while(Respuesta.toUpperCase() != 'ESC') {
 
     else if(Respuesta == 'Estandar') {
 
-        precio(precioSubscripcion2, precioDolar, ImpuestosDolar)
+        precio(precioSubscripcion2, PrecioDolar, ImpuestosDolar)
         alert('Precio total con impuesto incluidos: ' + preciototal + ' ARS')
 
-        let confirmar = ('Desea confirmar la suscripcion? \n - SI\n - NO')
+        let confirmar = prompt('Desea confirmar la suscripcion? \n - SI\n - NO')
 
-        if(confirmar == 'SI') {
+        if(confirmar.toLocaleUpperCase() == 'SI') {
             alert('Compra realizada')
         }
         break
@@ -62,6 +62,7 @@ while(Respuesta.toUpperCase() != 'ESC') {
         }
 
         break
+        
     }
 
 
