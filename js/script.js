@@ -30,8 +30,10 @@ while(Respuesta.toUpperCase() != 'ESC') {
     if (confirmar == 'SI') {
         alert('Compra Relizada')
     }
-        
-    break
+
+    Respuesta = prompt('Seleccion que subscripcion desea acceder o presione ESC: \n - Basica - 9.99\n - Estandar - 15.99\n - Premium - 19.99\n - ESC')
+
+    // break
     }
     
 
@@ -46,7 +48,10 @@ while(Respuesta.toUpperCase() != 'ESC') {
         if(confirmar.toLocaleUpperCase() == 'SI') {
             alert('Compra realizada')
         }
-        break
+
+        Respuesta = prompt('Seleccion que subscripcion desea acceder o presione ESC: \n - Basica - 9.99\n - Estandar - 15.99\n - Premium - 19.99\n - ESC')
+
+        // break
 
     }
 
@@ -58,13 +63,20 @@ while(Respuesta.toUpperCase() != 'ESC') {
         let confirmar = prompt('Desea confirmar la suscripcion? \n - SI\n - NO')
         
         if(confirmar.toUpperCase() == 'SI') {
-            alert('Compra realizada')
-        }
 
-        break
+            alert('Compra realizada')
+            
+        }
+        
+        Respuesta = prompt('Seleccion que subscripcion desea acceder o presione ESC: \n - Basica - 9.99\n - Estandar - 15.99\n - Premium - 19.99\n - ESC')
+
+        // break
+
         
     }
 
+    
+    
 
 
 }

@@ -103,12 +103,12 @@
 
     input:focus {
         outline: none;
-        box-shadow: 0 0 10px gray, 0 0 20px gray, 0 0 20px gray;
+        box-shadow: 0 0 10px $primary, 0 0 20px $primary, 0 0 20px $primary;
 
     }
 
     textarea:focus {
-        box-shadow: 0 0 10px gray, 0 0 20px gray, 0 0 20px gray;
+        box-shadow: 0 0 10px $primary, 0 0 20px $primary, 0 0 20px $primary;
 
     }
 
