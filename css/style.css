@@ -412,7 +412,9 @@ nav li:nth-child(4) {
   .container-form input {
     margin: 22px 0px;
     background-color: #FA4753;
-    padding: 11px 34%;
+    width: 444px;
+    height: 40px;
+    padding-left: 10px;
     font-weight: bold;
     font-size: 15px;
     margin-bottom: 50px;
@@ -516,9 +518,9 @@ nav li:nth-child(4) {
   background: url(https://wallpaperaccess.com/full/2128630.jpg) #17181c;
   background-repeat: no-repeat;
   background-position-x: right;
-  background-size: 37%;
+  background-size: 38%;
   margin: 60px;
-  box-shadow: 13px 13px 20px black;
+  box-shadow: 0px 0px 20px 8px black;
   padding: 25px 32px;
   border-radius: 10px; }
   .contact-form label {
@@ -526,29 +528,51 @@ nav li:nth-child(4) {
     display: block;
     font-size: 20px; }
   .contact-form input {
-    padding: 19px 163px;
+    width: 481px;
+    height: 60px;
     margin: 20px 0px;
     border: solid #FA4753;
     color: white;
+    font-size: 20px;
+    padding-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 10px;
     background: none; }
+    .contact-form input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #FA4753, 0 0 20px #FA4753, 0 0 20px #FA4753; }
+    .contact-form input::placeholder {
+      font-weight: bold; }
   .contact-form textarea {
     background: none;
-    padding: 60px 163px;
+    width: 481px;
     outline: none;
+    height: 184px;
+    font-size: 20px;
     color: white;
     border: solid #FA4753;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     margin: 20px 0px;
-    border-radius: 10px; }
-  .contact-form textarea:focus {
-    outline: none; }
-  .contact-form input:focus {
-    outline: none;
-    box-shadow: 0 0 10px #FA4753, 0 0 20px #FA4753, 0 0 20px #FA4753; }
-  .contact-form textarea:focus {
-    box-shadow: 0 0 10px #FA4753, 0 0 20px #FA4753, 0 0 20px #FA4753; }
+    border-radius: 10px;
+    padding: 12px;
+    resize: none; }
+    .contact-form textarea:focus {
+      outline: none; }
+    .contact-form textarea::placeholder {
+      font-weight: bold; }
+    .contact-form textarea:focus {
+      box-shadow: 0 0 10px #FA4753, 0 0 20px #FA4753, 0 0 20px #FA4753; }
+    .contact-form textarea::-webkit-scrollbar {
+      width: 25px;
+      transition: .4s all;
+      border-radius: 10px;
+      background: #17181C; }
+    .contact-form textarea::-webkit-scrollbar-thumb {
+      background: #FA4753;
+      height: 30%;
+      border-radius: 20px;
+      transition: 1s all;
+      border: solid 8px #17181c; }
 
 .main-sub {
   background-color: #17181C; }
@@ -561,11 +585,13 @@ nav li:nth-child(4) {
     color: white;
     display: flex;
     justify-content: center;
+    margin: auto;
     margin-top: 10px; }
 
 .section-sub {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 25px; }
   .section-sub div {
     background-color: #1A1B1F;
     width: 345px;
@@ -575,6 +601,50 @@ nav li:nth-child(4) {
     margin-top: 43px;
     border-radius: 10px;
     box-shadow: 0px 0px 25px #000000; }
+    .section-sub div div {
+      background: #FA4753;
+      height: 167px;
+      display: inline-block;
+      margin: auto;
+      border-radius: 10px 10px 0px 0px;
+      box-shadow: none; }
+      .section-sub div div h3 {
+        color: white;
+        font-size: 36px;
+        text-align: center;
+        margin-top: 20px; }
+      .section-sub div div p {
+        color: white;
+        font-size: 32px;
+        text-align: center;
+        font-weight: 400; }
+    .section-sub div .container-ventajas {
+      background: none;
+      height: auto; }
+      .section-sub div .container-ventajas p {
+        font-size: 20px;
+        display: flex;
+        justify-content: start;
+        margin: 38px 33px; }
+        .section-sub div .container-ventajas p i {
+          margin-right: 5px; }
+  .section-sub button {
+    padding: 20px 53px;
+    display: flex;
+    margin: auto;
+    background: #FA4753;
+    border: none;
+    box-shadow: 0px 0px 14px #000000;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .4s all; }
+  .section-sub button:hover {
+    transform: scale(1.05); }
+  .section-sub button:active {
+    transform: scale(1);
+    background: none;
+    border: solid 2px #FA4753; }
 
 footer {
   height: 400px;
