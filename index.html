@@ -24,13 +24,6 @@
                     <li><a href="pages/categoria/drama.html">Drama</a></li> 
                     </ul>
                 </div>
-                <div class="nav-search">
-                    <span>
-                        <i class="fa-solid fa-search"></i>
-                    </span>
-                    <input type="search" placeholder="Buscar">
-
-                </div>
             </ul>
             <ul class="nav-login">
                 <li><a href="pages/contacto.html">Contacto</a></li>
@@ -39,8 +32,8 @@
         </nav>
     </header>
     <main>
-            <a href="pages/sub.html" class="button-subs">
-                <span>Suscribirse</span>
+            <a href="pages/sub.html" class="button-subs" id="boton-suscribirse">
+                <span><i class="fa-regular fa-address-card"></i></span>
 
             </a>
         
@@ -51,37 +44,51 @@
             </article>
             <div class="info-portada">
                 <h2>Demon Slayer: Kimetsu no Yaiba</h2>
-                <!-- <p>Demon Slayer: Kimetsu no Yaiba, Guardianes de la noche en España, nos presenta a Kamado Tanjiro, un chico joven, 
-                    bastante inteligente y con un corazón que no le abe en el pecho. Este vive son su familia y gana dinero vendien</p> -->
                     <a href=""><button>Ver Ahora</button></a>
                 </div>
                 </section>
         <section class="container-productos">
-            <h2>Tendencia</h2>
-            <a href="">
+            <div class="nav-search">
+                <span>
+                    <i class="fa-solid fa-search"></i>
+                </span>
+                <input type="search" placeholder="Buscar categoria" id="catalogo">
+                <button id="filtrar">Filtrar</button>
+                <button id="mostrar-todo">Mostrar Todo</button>
+            </div>
+            <h2 id="titulo-catalogo">Tendencia</h2>
+            <div id="container-series">
+
+                
+            </div>
+            <span id="error-busqueda" class="error-busqueda1"></span>
+            <!-- <a href="" class="series">
                 <img src="https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731564519729_full.jpg" alt="">
             </a>
-            <a href="">
+            <a href="" class="series">
             <img src="https://img1.ak.crunchyroll.com/i/spire3/98ea4207e23a2ea3e3af39ad641d88001533322009_full.jpg" alt="">
             </a>
-            <a href="">
+            <a href="" class="series">
                 <img src="https://img1.ak.crunchyroll.com/i/spire3/02c909684baa37d6ef70a9df742d58951610752067_main.jpg" alt="">
-            </a>
-            <a href="">
+            </a> -->
+            <!-- <a href="" class="series">
 
-            </a>
+            </a> -->
         </section>
         <section class="container-productos">
-            <h2>Nuevos lanzamientos</h2>
-            <a href="">
-                <img src="https://es.web.img3.acsta.net/pictures/21/11/22/10/54/0321052.jpg" alt="">
+            <!-- <h2>Nuevos lanzamientos</h2> -->
+            <div id="series-nuevas">
+
+            </div>
+            <!-- <a href="" class="series" id="container-series">
+                <img src="https://es.web.img3.acsta.net/pictures/21/11/22/10/54/0321052.jpg" alt=""> -->
             </a>
-            <a href="">
+            <!-- <a href="" class="series">
                 <img src="https://img1.ak.crunchyroll.com/i/spire4/9c6619e957a33dea39079575f398141f1649520741_main.jpg" alt="">
             </a>
-            <a href="">
+            <a href="" class="series">
                 <img src="https://img1.ak.crunchyroll.com/i/spire4/727a407a607f1ddcc1789ed995beddd01658530970_main.jpg" alt="">
-            </a>
+            </a> --> 
         </section>
     </main>
     <footer>
@@ -100,6 +107,6 @@
             </ul>
         
     </footer>
-    <!-- <script src="js/script2.js"></script> -->
+    <script src="js/prueba2.js"></script>
 </body>
 </html>
