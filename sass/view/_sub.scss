@@ -92,13 +92,22 @@
 
 }
 
-#confirm-sub {
+.boton-cancelar {
+    display: none;
+}
+
+#confirmar-sub {
     display: flex; 
     justify-content: center;
     position: absolute;
     margin: auto;
     backdrop-filter: blur(2px);
     width: 100%;
+
+    button:nth-child(2) {
+        display: flex;
+        position: absolute;
+    }
 
     div {
         box-shadow: 0px 1px 18px 8px black;
@@ -112,6 +121,10 @@
             justify-content: center;
             margin: 19px 0px ;
             font-weight: none;
+        }
+
+        p {
+            font-size: 20px;
         }
         button {
             display: flex;
@@ -128,8 +141,33 @@
             transition: .4s all;
             &:hover {
                 background: #401518;
+
             }
         }
     }
 }
+
+.cancelar-sub {
+    width: 2%;
+    position: absolute;
+    margin: 12px;
+    right: 407px;
+    height: 29px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    transition: .5s all;
+    color: white;
+    cursor: pointer;
+    i {
+        transition: .4s all;
+        &:hover {
+            text-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753;;
+    
+        }
+    }
+    
+}
+
+
 

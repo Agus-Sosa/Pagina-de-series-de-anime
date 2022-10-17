@@ -298,6 +298,19 @@ nav li:nth-child(4) {
 .info-portada {
   box-shadow: 0px 5px 46px black; }
 
+.series-css a {
+  display: inline-block;
+  width: 292px;
+  margin: 0px 35px;
+  border-radius: 10px;
+  transition: .4s all; }
+  .series-css a img {
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 7px 5px 11px black; }
+  .series-css a:hover {
+    transform: scale(1.04); }
+
 .container-productos {
   margin-bottom: 47px; }
   .container-productos h2 {
@@ -707,26 +720,34 @@ nav li:nth-child(4) {
     .section-sub button:hover {
       background-color: #401518; }
 
-#confirm-sub {
+.boton-cancelar {
+  display: none; }
+
+#confirmar-sub {
   display: flex;
   justify-content: center;
   position: absolute;
   margin: auto;
   backdrop-filter: blur(2px);
   width: 100%; }
-  #confirm-sub div {
+  #confirmar-sub button:nth-child(2) {
+    display: flex;
+    position: absolute; }
+  #confirmar-sub div {
     box-shadow: 0px 1px 18px 8px black;
     border-top: solid 5px #FA4753;
     width: 45%;
     padding: 40px 53px;
     background-color: #17181C; }
-    #confirm-sub div h3 {
+    #confirmar-sub div h3 {
       color: white;
       display: flex;
       justify-content: center;
       margin: 19px 0px;
       font-weight: none; }
-    #confirm-sub div button {
+    #confirmar-sub div p {
+      font-size: 20px; }
+    #confirmar-sub div button {
       display: flex;
       margin: 130px auto 17px auto;
       font-size: 20px;
@@ -739,8 +760,25 @@ nav li:nth-child(4) {
       margin-top: 63%;
       border: none;
       transition: .4s all; }
-      #confirm-sub div button:hover {
+      #confirmar-sub div button:hover {
         background: #401518; }
+
+.cancelar-sub {
+  width: 2%;
+  position: absolute;
+  margin: 12px;
+  right: 407px;
+  height: 29px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  transition: .5s all;
+  color: white;
+  cursor: pointer; }
+  .cancelar-sub i {
+    transition: .4s all; }
+    .cancelar-sub i:hover {
+      text-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753; }
 
 footer {
   height: 400px;

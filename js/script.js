@@ -19,42 +19,120 @@ let Suscripcion3 = {
 
 let listaSuscripciones = [Suscripcion1, Suscripcion2, Suscripcion3]
 
+let listaPrecio = [Suscripcion1.precio, Suscripcion2.precio, Suscripcion3.precio]
+
+console.log(listaPrecio)
+
+
+let preciototal = 0
 
 let ImpuestosDolar = 1.75 
 let PrecioDolar = 150
 
 function precio(precio, precioDolar, impuestos) {
-    preciototal = Math.trunc(precio * precioDolar) * impuestos 
+    return Math.trunc(precio * precioDolar) * impuestos 
 }
+
+
+let confirmarSub = document.getElementById('confirmar-sub')
+
+let botonBasico = document.getElementById('boton-basico')
+botonBasico.addEventListener('click', eventoBasico)
+
+let botonEstandar = document.getElementById('boton-estandar')
+botonEstandar.addEventListener('click', eventoEstandar)
+
+let botonPremium = document.getElementById('boton-premium')
+botonPremium.addEventListener('click', eventoPremium)
+
+let cancelarEvento = document.getElementById('cancelar-evento')
+
+function render(precioSub) {
+    confirmarSub.innerHTML = ''
+    let precioArs  =  precio(precioSub, PrecioDolar, ImpuestosDolar)
+    let mostarEvento = document.createElement('div')
+
+    mostarEvento.className = 'confirmar-sub'
+    mostarEvento.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $ ${precioArs}  </p><button>Confirmar</button> `
+    mostarEvento.setAttribute('id', 'evento-sub')
+
+    let botonCancelar = document.createElement('button')
+    botonCancelar.className = 'cancelar-sub'
+    botonCancelar.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    
+    botonCancelar.addEventListener('click', () => {
+        window.location.replace('../pages/sub.html')
+    }, 3000 )
+    confirmarSub.append(botonCancelar)
+    confirmarSub.append(mostarEvento)
+    
+}
+
+
+
+
+
+function eventoBasico () {
+    render(Suscripcion1.precio)
+
+}
+
+function eventoEstandar () {
+    render(Suscripcion2.precio)
+}
+
+function eventoPremium() {
+    render(Suscripcion3.precio)
+}
+
+
+
+
+
+// cancelarEvento.addEventListener('click', () => {
+//     close(eventoBasico())
+// })
+
+// cancelarEvento.addEventListener('click', () => {
+
+//     document.removeEventListener('click', eventoBasico)
+//     cancelarEvento.innerText = 'X'
+//     confirmarSub.append(cancelarEvento)
+
+//     cancelarEvento.type = 'reset'
+// }) 
 
 
 // function botonDeSub (eventoSub) {
 //     eventoSub = document.getElementById('confirm-sub')
 // }
 
-let seccionSub = document.getElementById('confirm-sub')
+// let seccionSub = document.getElementById('confirm-sub')
 
-let botonSub = document.getElementById('boton-compra')
+// let botonSub = document.getElementById('boton-compra')
 
-let body = document.getElementsByTagName('body')
+// let body = document.getElementsByTagName('body')
 
-botonSub = document.addEventListener('click',clickSub)
+// botonSub = document.addEventListener('click',clickSub)
 
-function clickSub() {
-    seccionSub.innerHTML=''
-    let confirmacionSub = document.createElement('div')
-    confirmacionSub.className = 'confirmar-sub'
-    confirmacionSub.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $${Suscripcion1.precio} </p><button>Confirmar</button>`
-    body.className = 'evento-body'
-    seccionSub.append(confirmacionSub)
-}
+// function render() {
+//     seccionSub.innerHTML=''
+//     let confirmacionSub = document.createElement('div')
+//     confirmacionSub.className = 'confirmar-sub'
+//     confirmacionSub.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $${Suscripcion1.precio} </p><button>Confirmar</button>`
+//     body.className = 'evento-body'
+//     seccionSub.append(confirmacionSub)
+// }
 
-botonSub.addEventListener('click', botonDeCompra)
+// botonSub.addEventListener('click', botonDeCompra)
 
-function botonDeCompra () {
+// function botonDeCompra () {
     
-}
+// }
 
+// function clickSub () {
+//     render()
+// }
 
 
 // alert('Estas son las suscripciones: \n - ' + listaSuscripciones.join('\n - '))

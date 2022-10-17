@@ -45,15 +45,19 @@ let tituloCatalogo = document.getElementById('titulo-catalogo')
 function filtrar () {
     let filtroActual = listaCatalogo.filter((prod) =>prod.genero == filtrarCategoria)
     tituloCatalogo.innerHTML = filtrarCategoria
-    // if(filtroActual == 0){
-    //     errorDeBusqueda.innerHTML = ''
-    //     let sinResultados = document.createElement('div')
-    //     sinResultados.className = 'sin-resultados'
-    //     sinResultados.innerHTML = '<p>No se encontraron resultados</p>'
+    if(filtroActual == 0){
+        errorDeBusqueda.innerHTML = ''
+        tituloCatalogo.innerText = 'Sin Resultados'
+        
+        // let sinResultados = document.createElement('div')
+        // sinResultados.className = 'sin-resultados'
+        // sinResultados.innerHTML = '<p>No se encontraron resultados</p>'
 
-    //     errorDeBusqueda.append(sinResultados)
+        // errorDeBusqueda.append(sinResultados)
+        
+        
+    }
 
-    // }
     
     render(filtroActual)
 
@@ -63,12 +67,10 @@ let botonMostrarTodo = document.getElementById('mostrar-todo')
 botonMostrarTodo.addEventListener('click', mostrarTodo)
 
 function mostrarTodo () {
-    tituloCatalogo.innerHTML = 'Tendencia'
+    tituloCatalogo.innerHTML = 'Todos'
     
     render(listaCatalogo)
-
     
-
 }
 
 let botonDeSuscribirse = document.getElementById('boton-suscribirse')
@@ -86,13 +88,14 @@ function eventoDeSuscribirse2 () {
 
 
 // function errorbusqueda () {
-//     if(filtroActual.length == 0) {
-    
-//         let errorBusqueda = document.createElement('div')
-//         errorBusqueda.className = 'error-busqueda'
-//         errorBusqueda.innerHTML = '<p>No se han encontrado resultados</p>'
-        
-//         errorDeBusqueda.append(errorBusqueda)
+//     if(filtroActual == 0){
+//         errorDeBusqueda.innerHTML = ''
+//         let sinResultados = document.createElement('div')
+//         sinResultados.className = 'sin-resultados'
+//         sinResultados.innerHTML = '<p>No se encontraron resultados</p>'
+
+//         errorDeBusqueda.append(sinResultados)
+
 //     }
 // }
 
