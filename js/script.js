@@ -21,12 +21,11 @@ let listaSuscripciones = [Suscripcion1, Suscripcion2, Suscripcion3]
 
 let listaPrecio = [Suscripcion1.precio, Suscripcion2.precio, Suscripcion3.precio]
 
-console.log(listaPrecio)
 
 
 let preciototal = 0
 
-let ImpuestosDolar = 1.75 
+let ImpuestosDolar = 1.75
 let PrecioDolar = 150
 
 function precio(precio, precioDolar, impuestos) {
@@ -53,17 +52,28 @@ function render(precioSub) {
     let mostarEvento = document.createElement('div')
 
     mostarEvento.className = 'confirmar-sub'
-    mostarEvento.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $ ${precioArs}  </p><button>Confirmar</button> `
+    mostarEvento.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $ ${precioArs} <p>Actualmente se aplican los siguientes impuestos a la factura de Netflix: IVA servicio digital (21%), impuesto País (8%), Ganancias o Bienes Personales (45%).</p>  `
     mostarEvento.setAttribute('id', 'evento-sub')
 
     let botonCancelar = document.createElement('button')
-    botonCancelar.className = 'cancelar-sub'
-    botonCancelar.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    botonCancelar.className = 'confirmar-sub'
+    botonCancelar.innerHTML = 'Cerrar'
     
     botonCancelar.addEventListener('click', () => {
         window.location.replace('../pages/sub.html')
-    }, 3000 )
-    confirmarSub.append(botonCancelar)
+    },  )
+
+    let botonConfirmar = document.createElement('button')
+    botonConfirmar.className = 'confirmar-sub'
+    botonConfirmar.innerText = 'Confirmar'
+    botonConfirmar.addEventListener('click', ()=> {
+        botonConfirmar.innerText = 'Cargando...'
+        setTimeout (()=> {mostarEvento.innerText = 'Compra realizada con exito'}, 1000)
+        
+        setTimeout ( () => { window.location.replace('../pages/sub.html')}, 3000)
+    })
+    mostarEvento.append(botonConfirmar)
+    mostarEvento.append(botonCancelar)
     confirmarSub.append(mostarEvento)
     
 }
@@ -86,7 +96,12 @@ function eventoPremium() {
 }
 
 
+function CompraRealizada (){
+    let alertaCompra = document.createElement('div')
+    alertaCompra.className = 'alerta-compra'
+    alertaCompra.innerHTML = '<p>Compra Realizada</p>'
 
+}
 
 
 // cancelarEvento.addEventListener('click', () => {

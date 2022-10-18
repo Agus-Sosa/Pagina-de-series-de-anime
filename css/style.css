@@ -738,7 +738,8 @@ nav li:nth-child(4) {
     border-top: solid 5px #FA4753;
     width: 45%;
     padding: 40px 53px;
-    background-color: #17181C; }
+    background-color: #17181C;
+    color: white; }
     #confirmar-sub div h3 {
       color: white;
       display: flex;
@@ -747,9 +748,11 @@ nav li:nth-child(4) {
       font-weight: none; }
     #confirmar-sub div p {
       font-size: 20px; }
+    #confirmar-sub div p:nth-child(3) {
+      margin: 48px 72px; }
     #confirmar-sub div button {
-      display: flex;
-      margin: 130px auto 17px auto;
+      display: inline-flex;
+      margin: 0px 45px;
       font-size: 20px;
       padding: 22px 54px;
       border-radius: 10px;
@@ -757,11 +760,16 @@ nav li:nth-child(4) {
       background: #FA4753;
       color: white;
       cursor: pointer;
-      margin-top: 63%;
+      margin-top: 10%;
       border: none;
       transition: .4s all; }
       #confirmar-sub div button:hover {
         background: #401518; }
+    #confirmar-sub div button:nth-child(6) {
+      background-color: #17181c;
+      transition: .6s all; }
+      #confirmar-sub div button:nth-child(6):hover {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; }
 
 .cancelar-sub {
   width: 2%;
