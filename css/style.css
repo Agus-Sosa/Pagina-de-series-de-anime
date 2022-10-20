@@ -308,8 +308,6 @@ nav li:nth-child(4) {
     border-radius: 10px;
     width: 100%;
     box-shadow: 7px 5px 11px black; }
-  .series-css a:hover {
-    transform: scale(1.04); }
 
 .container-productos {
   margin-bottom: 47px; }
@@ -787,6 +785,15 @@ nav li:nth-child(4) {
     transition: .4s all; }
     .cancelar-sub i:hover {
       text-shadow: 0 0 10px #FA4753, 0 0 40px #FA4753, 0 0 80px #FA4753; }
+
+.info-sub {
+  background: #D31027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EA384D, #D31027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EA384D, #D31027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0px 0px 5px 5px #EA384D; }
 
 footer {
   height: 400px;

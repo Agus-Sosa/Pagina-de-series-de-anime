@@ -1,0 +1,16 @@
+
+[
+    {
+        "nombre": "Basica",
+        "precio": 10
+    },
+    {
+        "nombre": "Estandar",
+        "precio": 15
+    },
+
+    {
+        "nombre": "Premium",
+        "precio": 20
+    }
+]

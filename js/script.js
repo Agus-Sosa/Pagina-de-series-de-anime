@@ -1,26 +1,12 @@
-// JAVASCRIPT DEL PROYECTO
-let Suscripcion1 = {
-    nombre: 'Basica',
-    precio: 10,
-}
 
-let Suscripcion2 = {
-    
-    nombre: 'Estandar',
-    precio: 15,
 
-}
+localStorage.setItem('suscripcion1', JSON.stringify({nombre: 'Basica', precio: 10}))
+localStorage.setItem('suscripcion2', JSON.stringify({nombre: 'Estandar', precio: 15}))
+localStorage.setItem('suscripcion3', JSON.stringify({nombre: 'Premium', precio: 20}))
 
-let Suscripcion3 = {
-
-    nombre: 'Premium',
-    precio:  19.99,
-}
-
-let listaSuscripciones = [Suscripcion1, Suscripcion2, Suscripcion3]
-
-let listaPrecio = [Suscripcion1.precio, Suscripcion2.precio, Suscripcion3.precio]
-
+let suscripcion1 = JSON.parse(localStorage.getItem('suscripcion1'))
+let suscripcion2 = JSON.parse(localStorage.getItem('suscripcion2'))
+let suscripcion3 = JSON.parse(localStorage.getItem('suscripcion3'))
 
 
 let preciototal = 0
@@ -60,7 +46,7 @@ function render(precioSub) {
     botonCancelar.innerHTML = 'Cerrar'
     
     botonCancelar.addEventListener('click', () => {
-        window.location.replace('../pages/sub.html')
+        confirmarSub.innerHTML = ''
     },  )
 
     let botonConfirmar = document.createElement('button')
@@ -68,9 +54,14 @@ function render(precioSub) {
     botonConfirmar.innerText = 'Confirmar'
     botonConfirmar.addEventListener('click', ()=> {
         botonConfirmar.innerText = 'Cargando...'
-        setTimeout (()=> {mostarEvento.innerText = 'Compra realizada con exito'}, 1000)
+        setTimeout ( () => {confirmarSub.innerHTML = ''}, 2000)
+        setTimeout ( () => {Toastify({
+                text: "Compra Realizada con exito",
+                className: "info-sub",
+                style: {
+                }
+            }).showToast();}, 2500)
         
-        setTimeout ( () => { window.location.replace('../pages/sub.html')}, 3000)
     })
     mostarEvento.append(botonConfirmar)
     mostarEvento.append(botonCancelar)
@@ -83,16 +74,16 @@ function render(precioSub) {
 
 
 function eventoBasico () {
-    render(Suscripcion1.precio)
+    render(suscripcion1.precio)
 
 }
 
 function eventoEstandar () {
-    render(Suscripcion2.precio)
+    render(suscripcion2.precio)
 }
 
 function eventoPremium() {
-    render(Suscripcion3.precio)
+    render(suscripcion3.precio)
 }
 
 
