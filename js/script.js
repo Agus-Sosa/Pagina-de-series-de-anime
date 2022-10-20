@@ -38,7 +38,7 @@ function render(precioSub) {
     let mostarEvento = document.createElement('div')
 
     mostarEvento.className = 'confirmar-sub'
-    mostarEvento.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $ ${precioArs} <p>Actualmente se aplican los siguientes impuestos a la factura de Netflix: IVA servicio digital (21%), impuesto País (8%), Ganancias o Bienes Personales (45%).</p>  `
+    mostarEvento.innerHTML = `<h3>¿Desea confirmar la suscripcion?</h3> <p>Precio Total $ ${precioArs} <p>Actualmente se aplican los siguientes impuestos a la factura de Netflix: IVA servicio digital (21%), impuesto País (8%), Ganancias o Bienes Personales (45%).</p> `
     mostarEvento.setAttribute('id', 'evento-sub')
 
     let botonCancelar = document.createElement('button')
@@ -70,9 +70,6 @@ function render(precioSub) {
 }
 
 
-
-
-
 function eventoBasico () {
     render(suscripcion1.precio)
 
@@ -87,12 +84,12 @@ function eventoPremium() {
 }
 
 
-function CompraRealizada (){
-    let alertaCompra = document.createElement('div')
-    alertaCompra.className = 'alerta-compra'
-    alertaCompra.innerHTML = '<p>Compra Realizada</p>'
+// function CompraRealizada (){
+//     let alertaCompra = document.createElement('div')
+//     alertaCompra.className = 'alerta-compra'
+//     alertaCompra.innerHTML = '<p>Compra Realizada</p>'
 
-}
+// }
 
 
 // cancelarEvento.addEventListener('click', () => {
