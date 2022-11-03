@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Anime, Series, Entretenimiento">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/004/967/183/non_2x/anime-eyes-vision-fire-pop-culture-logo-design-vector.jpg">
     <link rel="stylesheet" href="css/style.css">
     <title>Aplicacion de Anime</title>
@@ -34,9 +35,12 @@
     <main>
         
             <a href="pages/sub.html" class="button-subs" id="boton-suscribirse">
-                <span><i class="fa-regular fa-address-card"></i></span>
+                <span>Suscribirse</span>
 
             </a>
+            <section id="contenedor-favorito">                
+            </section>
+            <button id="boton-favoritos"><i class="fa-solid fa-heart"></i><span id="contador-favoritos">0</span></button>
         
         
         <section class="container-portada">
@@ -64,33 +68,13 @@
                 
             </div>
             <span id="error-busqueda" class="error-busqueda1"></span>
-            <!-- <a href="" class="series">
-                <img src="https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731564519729_full.jpg" alt="">
-            </a>
-            <a href="" class="series">
-            <img src="https://img1.ak.crunchyroll.com/i/spire3/98ea4207e23a2ea3e3af39ad641d88001533322009_full.jpg" alt="">
-            </a>
-            <a href="" class="series">
-                <img src="https://img1.ak.crunchyroll.com/i/spire3/02c909684baa37d6ef70a9df742d58951610752067_main.jpg" alt="">
-            </a> -->
-            <!-- <a href="" class="series">
-
-            </a> -->
+            
         </section>
         <section class="container-productos">
             <!-- <h2>Nuevos lanzamientos</h2> -->
             <div id="series-nuevas">
 
             </div>
-            <!-- <a href="" class="series" id="container-series">
-                <img src="https://es.web.img3.acsta.net/pictures/21/11/22/10/54/0321052.jpg" alt=""> -->
-            </a>
-            <!-- <a href="" class="series">
-                <img src="https://img1.ak.crunchyroll.com/i/spire4/9c6619e957a33dea39079575f398141f1649520741_main.jpg" alt="">
-            </a>
-            <a href="" class="series">
-                <img src="https://img1.ak.crunchyroll.com/i/spire4/727a407a607f1ddcc1789ed995beddd01658530970_main.jpg" alt="">
-            </a> --> 
         </section>
     </main>
     <footer>
@@ -109,6 +93,10 @@
             </ul>
 
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.1/dist/sweetalert2.all.min.js"></script>
+
+    <!-- <script src="js/prueba.js"></script> -->
     <script src="js/script2.js"></script>
 </body>
 </html>

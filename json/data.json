@@ -1,16 +1,26 @@
 
+
 [
     {
-        "nombre": "Basica",
-        "precio": 10
+        "casa": {
+            "compra": "57,900",
+            "venta": "62,900",
+            "agencia": "349",
+            "nombre": "Dolar Oficial",
+            "variacion": "-0,050",
+            "ventaCero": "TRUE",
+            "decimales": "3"
+        }
     },
     {
-        "nombre": "Estandar",
-        "precio": 15
-    },
-
-    {
-        "nombre": "Premium",
-        "precio": 20
+        "casa": {
+            "compra": "64,500",
+            "venta": "68,500",
+            "agencia": "310",
+            "nombre": "Dolar Blue",
+            "variacion": "0,370",
+            "ventaCero": "TRUE",
+            "decimales": "3"
+        }
     }
 ]

@@ -153,6 +153,17 @@
 
             }
         }
+        .contenedor-dolar {
+            box-shadow: none;
+            border: none;
+            margin: auto;
+            font-size: 26px;
+            display: inline-flex;
+            justify-content: center;
+            height: auto;
+            padding: initial;
+            width: 100%;
+        }
 
         // input {
         //     display: inline-flex;
@@ -202,4 +213,9 @@
     box-shadow: 0px 0px 20px 0px black;
 }
 
+
+.swal2-popup {
+    background: #000000;
+
+}
 

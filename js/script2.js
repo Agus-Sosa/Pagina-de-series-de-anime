@@ -1,36 +1,110 @@
-function Catalogo(nombre, imagen, genero) {
-    this.nombre = nombre;
-    this.imagen = imagen;
-    this.genero = genero
-}
+// Lista De Series
+const listaseries = [
+    {
+        id: 1,
+        nombre: 'Jujutsu Kaisen',
+        imagen: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/47efe819e954f83cf0b8e022c39488ce.jpeg',
+        genero: 'Accion'
+    },
+    {
+        id: 2,
+        nombre: 'One Piece', 
+        imagen: 'https://pbs.twimg.com/media/EnJDOWuUwAEPXB0.jpg',
+        genero: 'Aventura'
+    },
+    {
+        id: 3,
+        nombre: 'Shield Hero',
+        imagen: 'https://img1.ak.crunchyroll.com/i/spire4/25627becf63b169d19af7efee6122e791555537428_full.jpg',
+        genero: 'Aventura',
+    },
+    {
+        id: 4,
+        nombre: 'Re:Zero',
+        imagen: 'https://img1.ak.crunchyroll.com/i/spire3/291c6c3b60857afabe46899f848079a41610403802_main.jpg',
+        genero: 'Drama'
+    },
+    {
+        id: 5,
+        nombre: 'Chainsaw Man',
+        imagen: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpeg',
+        genero: 'Accion',
+    },
+    // {
+    //     id: 6,
+    //     nombre: 'Spy x Family',
+    //     imagen: 'https://img1.ak.crunchyroll.com/i/spire4/aca67c20cfebb66369acb168168d0bdc1637343068_main.png',
+    //     genero: 'Drama'
+    // },
+    // {
+    //     id: 7,
+    //     nombre: 'My Hero Academia',
+    //     imagen: 'http://img1.ak.crunchyroll.com/i/spire1/281089c6a9e64236a10e3b4232474e411523054320_full.png',
+    //     genero: 'Accion'
+    // }
+]
 
-
-let serieA = new Catalogo('Jujutsu Kaisen', 'https://img1.ak.crunchyroll.com/i/spire3/99ef837028463d4f940b63c2b288222b1600049466_main.png', 'Accion')
-let serieB = new Catalogo('One Piece', 'https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731564519729_full.jpg', 'Aventura')
-let serieC = new Catalogo('The Rising of the Shield Hero', 'https://img1.ak.crunchyroll.com/i/spire4/74dc98daf4362012ff758c7f4a13b2381649904825_main.jpg', 'Aventura')
-let seireD = new Catalogo('Re:Zero kara Hajimeru Isekai Seikatsu', 'https://img1.ak.crunchyroll.com/i/spire3/291c6c3b60857afabe46899f848079a41610403802_main.jpg', 'Drama')
-
-let listaCatalogo = [serieA, serieB, serieC, seireD]
-
+// Contenedor
 let catalogo = document.getElementById('container-series')
 
+let listaFav = []
+
 let errorDeBusqueda = document.getElementById('error-busqueda')
-listaDeNombres = listaCatalogo.filter((prod) =>prod.nombre)
+listaDeNombres = listaseries.filter((prod) =>prod.nombre)
 
+let contadoDeFavoritos = document.getElementById('contador-favoritos')
 
-function render(lista) {
+function renderSeries(lista) {
     catalogo.innerHTML = ''
-    for(const prod of lista) {
-        let card = document.createElement('a')
+    for(const prod of lista ){
+        let cardContenedor = document.createElement('a')
+    cardContenedor.className = 'card'
 
-        card.className = 'card'
-        card.innerHTML = `<img src='${prod.imagen}'><h3>${prod.nombre}</h3><p>${prod.genero}</p> `
+    let contenedorImagen = document.createElement('div')
+    contenedorImagen.innerHTML = `<img src='${prod.imagen}'>`
+    contenedorImagen.className = 'imagen-card'
 
-        catalogo.append(card)
+    let NombreSerie = document.createElement('h3')
+    NombreSerie.innerText = prod.nombre
+
+    let GeneroSerie = document.createElement('p')
+    GeneroSerie.innerText = prod.genero
+
+    
+    let BotonAñadirFav = document.createElement('button')
+    BotonAñadirFav.className = 'añadir-favorito'
+    BotonAñadirFav.innerText = 'Añadir'
+    BotonAñadirFav.setAttribute('agregar', prod.id)
+    BotonAñadirFav.addEventListener('click', () => {
+        
+            mostrarListaFavoritos
+
+            AgregarAFavoritos(prod.id)
+
+            Toastify({
+                
+                text: "Se agrego a favoritos",
+                
+                duration: 3000
+                
+            }).showToast();
+    })
+
+
+
+    cardContenedor.append(contenedorImagen)
+    cardContenedor.append(NombreSerie)
+    cardContenedor.append(GeneroSerie)
+    cardContenedor.append(BotonAñadirFav)
+    catalogo.append(cardContenedor)
     }
-
 }
-render(listaCatalogo)
+
+
+
+
+renderSeries(listaseries)
+
 
 let filtrarCategoria = ''
 
@@ -43,24 +117,17 @@ botonDeFiltrar.addEventListener('click', filtrar)
 let tituloCatalogo = document.getElementById('titulo-catalogo')
 
 function filtrar () {
-    let filtroActual = listaCatalogo.filter((prod) =>prod.genero == filtrarCategoria)
+    let filtroActual = listaseries.filter((prod) =>prod.genero == filtrarCategoria)
     tituloCatalogo.innerHTML = filtrarCategoria
     if(filtroActual == 0){
         errorDeBusqueda.innerHTML = ''
         tituloCatalogo.innerText = 'Sin Resultados'
-        
-        // let sinResultados = document.createElement('div')
-        // sinResultados.className = 'sin-resultados'
-        // sinResultados.innerHTML = '<p>No se encontraron resultados</p>'
 
-        // errorDeBusqueda.append(sinResultados)
         
         
     }
-
     
-    render(filtroActual)
-
+    renderSeries(filtroActual)
 }
 
 let botonMostrarTodo = document.getElementById('mostrar-todo')
@@ -69,34 +136,132 @@ botonMostrarTodo.addEventListener('click', mostrarTodo)
 function mostrarTodo () {
     tituloCatalogo.innerHTML = 'Todos'
     
-    render(listaCatalogo)
+    renderSeries(listaseries)
+}
+
+
+let AgregarAFavoritos = (prodId) =>{
+    let item = listaseries.find((prod)  => prod.id === prodId)
+        
+
+            listaFav.push(item)
+    mostrarListaFavoritos()
     
 }
 
-let botonDeSuscribirse = document.getElementById('boton-suscribirse')
-botonDeSuscribirse.addEventListener('mouseover', eventoDeSuscribirse)
 
-function eventoDeSuscribirse () {
-    setTimeout(() => {botonDeSuscribirse.innerHTML = 'Suscribirse'},1000)
+let botonFavoritos = document.getElementById('boton-favoritos')
+botonFavoritos.addEventListener('click', () => {
+    mostrarListaFavoritos()
+})
+
+
+let ContenedorListaFavoritos = document.getElementById('contenedor-favorito')
+
+function mostrarListaFavoritos (){
+    ContenedorListaFavoritos.innerHTML = ''
+    let div = document.createElement('div')
+    if(listaFav.length == 0){
+        div.innerHTML = '<img src="https://i.kym-cdn.com/photos/images/original/000/845/119/498.png" class="img-contenedor"><p class="p-contenedor">No hay nada aqui<p>'
+    }
+    listaFav.forEach((prod) => {
+        let {id, nombre, imagen, genero, } = prod
+        div.className = 'segundo-contenedor'
+        div.innerHTML += `
+        <section class='contenedor-series2'>
+        
+        <article class="contenedor-imagen">
+        <img class="" src="${imagen}">
+        </article>
+        <h5>${nombre}</h5>
+        <p>${genero}</p>
+        
+        <button onclick="eliminarSerie(${id})" class=""><i class="fa-solid fa-x"></i></button>
+        
+        </section>
+    `
+    })
+    
+    contadoDeFavoritos.textContent = listaFav.length
+
+    guardarFavEnStorage()
+
+    let contenedorDeBotones = document.createElement('div')
+    contenedorDeBotones.className = 'contenedor-botones'
+
+    let botonCerrarVentana = document.createElement('button')
+    botonCerrarVentana.innerText = 'Cerrar'
+    botonCerrarVentana.className = 'btn-cerrar'
+    botonCerrarVentana.addEventListener('click', () => {
+        ContenedorListaFavoritos.innerHTML = ''
+    })
+
+    let  botonBorrarTodo = document.createElement('button')
+    botonBorrarTodo.innerText = 'Borrar todo'
+    botonBorrarTodo.className = 'btn-cerrar'
+    botonBorrarTodo.addEventListener('click',() =>{
+        if(listaFav.length > 0){
+
+            Swal.fire({
+                title: 'Estas Seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Estoy Seguro'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+                listaFav = []
+                mostrarListaFavoritos()
+            }
+        })
+    }
+    else if(listaFav == 0){
+        Toastify({
+
+            text: "Tu lista de favoritos esta vacia",
+            
+            duration: 3000
+            
+            }).showToast();
+    }
+    })
+
+    contenedorDeBotones.append(botonBorrarTodo)
+    ContenedorListaFavoritos.append(div)
+    div.append(contenedorDeBotones)
+    contenedorDeBotones.append(botonCerrarVentana)
 }
 
-botonDeSuscribirse.addEventListener('mouseout', eventoDeSuscribirse2)
 
-function eventoDeSuscribirse2 () {
-    setTimeout(() => {botonDeSuscribirse.innerHTML = '<i class="fa-regular fa-address-card"></i>'}, 1000)
+
+
+
+function eliminarSerie (id) {
+    let serieId = id
+    listaFav = listaFav.filter((serie) => serie.id !== serieId)
+    mostrarListaFavoritos()
+    Toastify({
+
+        text: "Se elimino de favoritos",
+        
+        duration: 3000
+        
+        }).showToast();
+
 }
 
+document.addEventListener('DOMContentLoaded', () =>{
+    listaFav = JSON.parse(localStorage.getItem('favoritos')) || []
+})
 
-// function errorbusqueda () {
-//     if(filtroActual == 0){
-//         errorDeBusqueda.innerHTML = ''
-//         let sinResultados = document.createElement('div')
-//         sinResultados.className = 'sin-resultados'
-//         sinResultados.innerHTML = '<p>No se encontraron resultados</p>'
+function guardarFavEnStorage (){
+    localStorage.setItem('favoritos', JSON.stringify(listaFav))
+}
 
-//         errorDeBusqueda.append(sinResultados)
-
-//     }
-// }
-
-// errorDeBusqueda()
