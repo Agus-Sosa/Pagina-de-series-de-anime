@@ -9,7 +9,7 @@ const listaseries = [
     {
         id: 2,
         nombre: 'One Piece', 
-        imagen: 'https://pbs.twimg.com/media/EnJDOWuUwAEPXB0.jpg',
+        imagen: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/2239c7b46b2e491ae33b33ff980e9fb1.jpeg',
         genero: 'Aventura'
     },
     {
@@ -30,18 +30,24 @@ const listaseries = [
         imagen: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpeg',
         genero: 'Accion',
     },
-    // {
-    //     id: 6,
-    //     nombre: 'Spy x Family',
-    //     imagen: 'https://img1.ak.crunchyroll.com/i/spire4/aca67c20cfebb66369acb168168d0bdc1637343068_main.png',
-    //     genero: 'Drama'
-    // },
-    // {
-    //     id: 7,
-    //     nombre: 'My Hero Academia',
-    //     imagen: 'http://img1.ak.crunchyroll.com/i/spire1/281089c6a9e64236a10e3b4232474e411523054320_full.png',
-    //     genero: 'Accion'
-    // }
+    {
+        id: 6,
+        nombre: 'Spy x Family',
+        imagen: 'https://img1.ak.crunchyroll.com/i/spire4/aca67c20cfebb66369acb168168d0bdc1637343068_main.png',
+        genero: 'Drama'
+    },
+    {
+        id: 7,
+        nombre: 'My Hero Academia',
+        imagen: 'http://img1.ak.crunchyroll.com/i/spire1/281089c6a9e64236a10e3b4232474e411523054320_full.png',
+        genero: 'Accion'
+    },
+    {
+        id: 8,
+        nombre: 'Attack on Titan',
+        imagen: 'https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/a9d4c1493f80703fe86dd83fb3b37623.jpeg',
+        genero: 'Accion'
+    }
 ]
 
 // Contenedor
@@ -81,13 +87,7 @@ function renderSeries(lista) {
 
             AgregarAFavoritos(prod.id)
 
-            Toastify({
-                
-                text: "Se agrego a favoritos",
-                
-                duration: 3000
-                
-            }).showToast();
+            
     })
 
 
@@ -141,10 +141,33 @@ function mostrarTodo () {
 
 
 let AgregarAFavoritos = (prodId) =>{
-    let item = listaseries.find((prod)  => prod.id === prodId)
-        
+    const fijarseSiExiste = listaFav.some(serie => serie.id === prodId)
 
-            listaFav.push(item)
+    if(fijarseSiExiste){
+        Toastify({
+            text: 'Este contenido ya se encuentra en la lista',
+            
+            style:{
+                background: '#262949',
+            },
+            
+        }).showToast()
+    }else{
+
+        
+        let item = listaseries.find((prod)  => prod.id === prodId)
+        listaFav.push(item)
+        Toastify({
+                
+            text: "Se agrego a favoritos",
+            
+            duration: 3000,
+            style:{
+                background:'#262949'
+            }
+        }).showToast();
+    }
+    
     mostrarListaFavoritos()
     
 }
@@ -162,7 +185,7 @@ function mostrarListaFavoritos (){
     ContenedorListaFavoritos.innerHTML = ''
     let div = document.createElement('div')
     if(listaFav.length == 0){
-        div.innerHTML = '<img src="https://i.kym-cdn.com/photos/images/original/000/845/119/498.png" class="img-contenedor"><p class="p-contenedor">No hay nada aqui<p>'
+        div.innerHTML = '<img src="https://i.kym-cdn.com/photos/images/original/000/845/119/498.png" class="img-contenedor"><p class="p-contenedor">No hay nada aquí<p>'
     }
     listaFav.forEach((prod) => {
         let {id, nombre, imagen, genero, } = prod
@@ -203,7 +226,7 @@ function mostrarListaFavoritos (){
         if(listaFav.length > 0){
 
             Swal.fire({
-                title: 'Estas Seguro?',
+                title: '¿Estas Seguro?',
                 text: "¡No podrás revertir esto!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -213,10 +236,11 @@ function mostrarListaFavoritos (){
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
+                'Lista eliminada!',
+                'El proceso fue cancelado.',
                 'success'
                 )
+                
                 listaFav = []
                 mostrarListaFavoritos()
             }
@@ -226,8 +250,10 @@ function mostrarListaFavoritos (){
         Toastify({
 
             text: "Tu lista de favoritos esta vacia",
-            
-            duration: 3000
+            duration: 3000,
+            style:{
+                background: '#262949',
+            },
             
             }).showToast();
     }
@@ -251,7 +277,10 @@ function eliminarSerie (id) {
 
         text: "Se elimino de favoritos",
         
-        duration: 3000
+        duration: 3000,
+        style:{
+            background: '#262949'
+        }
         
         }).showToast();
 
@@ -259,6 +288,8 @@ function eliminarSerie (id) {
 
 document.addEventListener('DOMContentLoaded', () =>{
     listaFav = JSON.parse(localStorage.getItem('favoritos')) || []
+    mostrarListaFavoritos()
+
 })
 
 function guardarFavEnStorage (){

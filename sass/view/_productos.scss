@@ -81,6 +81,8 @@
         color: white;
         margin: 45px 35px;
         margin-bottom: 30px;
+        border-bottom: solid #FA4753;
+        padding: 10px 0px;
     }
 
     
@@ -200,7 +202,7 @@
 
     }
     img {
-        border-radius: 10px 10px 10px 0px;
+        border-radius: 10px 10px 0px 0px;
         box-shadow: none;
         width: 100%;
         transition: .5s transform;
@@ -226,7 +228,7 @@
 .imagen-card {
     overflow: hidden;
     transition: .5s all;
-    border-radius: 20px 20px 0px 20px;
+    border-radius: 20px 20px 0px 0px;
     // &:hover {
     //     opacity: 60%;
     // }
@@ -238,9 +240,13 @@
     padding: 6px;
     border-radius: 10px;
     background: $primary;
-    color: white;
+    color: black;
     cursor: pointer;
     border: none;
+    transition: .5s all;
+    &:hover {
+        color: white;
+    }
 
 }
 

@@ -54,7 +54,7 @@ function render(precioSub) {
 
     let parrafoImpuestos = document.createElement('p')
     parrafoImpuestos.className = 'parrafo-impuestos'
-    parrafoImpuestos.innerText = 'Actualmente se aplican los siguientes impuestos a la factura de Yoshua Anime: IVA servicio digital (21%), impuesto País (8%), Ganancias o Bienes Personales (45%).'
+    parrafoImpuestos.innerText = 'Actualmente se aplican los siguientes impuestos a la factura de Yunosha Anime: IVA servicio digital (21%), impuesto País (8%), Ganancias o Bienes Personales (45%).'
 
 
     function dolarHoy (){
@@ -132,24 +132,29 @@ function render(precioSub) {
 
 
 function eventoBasico () {
-    
-    setTimeout(() =>{
 
+
+        botonBasico.innerText = 'Cargando...'
+
+    setTimeout(() =>{
+        botonBasico.innerText = 'Comprar'
         render(suscripcion1.precio)
     }, 1000)
         
 }
 
 function eventoEstandar () {
+    botonEstandar.innerText = 'Cargando...'
     setTimeout(() =>{
-
+        botonEstandar.innerText = 'Comprar'
         render(suscripcion2.precio)
     },1000)
 }
 
 function eventoPremium() {
+    botonPremium.innerText = 'Cargando...'
     setTimeout(()=>{
-
+        botonPremium.innerText = 'Comprar'
         render(suscripcion3.precio)
     }, 1000)
 }

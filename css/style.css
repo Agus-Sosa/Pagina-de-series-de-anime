@@ -320,7 +320,9 @@ nav li:nth-child(4) {
   .container-productos h2 {
     color: white;
     margin: 45px 35px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    border-bottom: solid #FA4753;
+    padding: 10px 0px; }
 
 #container-series {
   display: flex;
@@ -403,7 +405,7 @@ nav li:nth-child(4) {
     display: inline-block;
     border: solid; }
   .card img {
-    border-radius: 10px 10px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
     box-shadow: none;
     width: 100%;
     transition: .5s transform; }
@@ -416,16 +418,19 @@ nav li:nth-child(4) {
 .imagen-card {
   overflow: hidden;
   transition: .5s all;
-  border-radius: 20px 20px 0px 20px; }
+  border-radius: 20px 20px 0px 0px; }
 
 .añadir-favorito {
   display: inline-flex;
   padding: 6px;
   border-radius: 10px;
   background: #FA4753;
-  color: white;
+  color: black;
   cursor: pointer;
-  border: none; }
+  border: none;
+  transition: .5s all; }
+  .añadir-favorito:hover {
+    color: white; }
 
 #boton-favoritos {
   position: fixed;
