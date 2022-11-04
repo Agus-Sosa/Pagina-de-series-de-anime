@@ -40,14 +40,14 @@ let cancelarEvento = document.getElementById('cancelar-evento')
     let precioDolarHoy = ''
 
 function render(precioSub) {
-    confirmarSub.innerHTML = ''
     
+    confirmarSub.innerHTML = ''
+
     let titulo = document.createElement('h3')
     titulo.className = 'titulo-sub'
     titulo.innerText = '¿Desea confirmar la suscripcion?'
 
-
-
+    
     let divContenedorDolar = document.createElement('div')
     divContenedorDolar.className = 'contenedor-dolar'
     
@@ -61,8 +61,7 @@ function render(precioSub) {
         fetch('https://api.bluelytics.com.ar/v2/latest')
         .then(res => res.json())
         .then(data => 
-           divContenedorDolar.innerText = '$' + precioSub *  JSON.stringify(data.oficial.value_sell) * ImpuestosDolar )
-            // .catch(error => console.error(new Error(error)))
+           divContenedorDolar.innerText = '$ ' + precioSub *  JSON.stringify(data.oficial.value_sell) * ImpuestosDolar )
     }dolarHoy();
     
     
@@ -79,13 +78,14 @@ function render(precioSub) {
     
     botonCancelar.addEventListener('click',() =>{
         Swal.fire({
-            title: 'Estas seguro que desea cancelar el proceso de suscripcion?',
+            title: 'Estas seguro que desea detener el proceso de suscripcion?',
             text: "¡No podrás revertir esto!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Detener',
             background: '#17181C',
             color: 'white',
             
@@ -93,7 +93,7 @@ function render(precioSub) {
             if (result.isConfirmed) {
                 Swal.fire(
                     'Proceso Cancelado!',
-                    'El proceso fue cancelado',
+                    'El proceso fue detenido',
                     'success',
                     
                 )
@@ -132,10 +132,7 @@ function render(precioSub) {
 
 
 function eventoBasico () {
-
-
         botonBasico.innerText = 'Cargando...'
-
     setTimeout(() =>{
         botonBasico.innerText = 'Comprar'
         render(suscripcion1.precio)

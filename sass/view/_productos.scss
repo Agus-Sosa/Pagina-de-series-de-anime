@@ -239,11 +239,15 @@
     display: inline-flex;
     padding: 6px;
     border-radius: 10px;
-    background: $primary;
-    color: black;
+    color: gray;
     cursor: pointer;
     border: none;
+    background: none;
     transition: .5s all;
+    i{
+        margin: 0px;
+        background: none;
+    }
     &:hover {
         color: white;
     }

@@ -79,7 +79,7 @@ function renderSeries(lista) {
     
     let BotonAñadirFav = document.createElement('button')
     BotonAñadirFav.className = 'añadir-favorito'
-    BotonAñadirFav.innerText = 'Añadir'
+    BotonAñadirFav.innerHTML = '<i class="fa-sharp fa-solid fa-plus"></i>'
     BotonAñadirFav.setAttribute('agregar', prod.id)
     BotonAñadirFav.addEventListener('click', () => {
         
@@ -232,6 +232,7 @@ function mostrarListaFavoritos (){
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
+                cancelButtonText: 'Cancelar',
                 confirmButtonText: 'Si, Estoy Seguro'
             }).then((result) => {
                 if (result.isConfirmed) {
