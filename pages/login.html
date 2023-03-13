@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/004/967/183/non_2x/anime-eyes-vision-fire-pop-culture-logo-design-vector.jpg">
     <link rel="stylesheet" href="../css/style.css">
     <title>Contacto</title>
@@ -34,22 +35,25 @@
     </header>
     <main class="main-login">
         <section class="container-form">
-            <h2>Iniciar Sesion</h2>
+            <h2>Registrarse</h2>
             <div>
                 <a href=""><i class="fa-brands fa-google"></i></a>
                 <a href=""><i class="fa-brands fa-square-facebook"></i></a>
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
             </div>
-            <form action="" id="form">
-                <label for="username">Nombre de usuario</label>
-                <input type="text" id="username">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" >
-                <label for="password">Contraeña</label>
-                <input type="password" name="password" id="password">
-                <label for="password2">Igrese nuevamente la contarseña</label>
-                <input type="password" name="password2" id="password2">
-                <button type="submit">Iniciar</button>
+            <form action="sub.html" id="form">
+                <!-- <label for="username">Nombre de usuario</label> -->
+                <span id="nombre-error" class="nombre-desactivado"></span>
+                <input type="text" id="username" placeholder="Nombre de usuario">
+                <!-- <label for="email">Email</label> -->
+                <!-- <input type="email" name="email" id="email" placeholder="Email" > -->
+                <!-- <label for="password">Contraeña</label> -->
+                <span id="contraseña-error" class="contraseña-desactivada"></span>
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+                <!-- <label for="password2">Igrese nuevamente la contarseña</label> -->
+                <span id="cartel-error" class="cartel-desactivado"></span>
+                <input type="password" name="password2" id="password2" placeholder="Repetir contraseña">
+                <button type="submit" id="boton-login">Iniciar</button>
             </form>
         </section>
     </main>    
@@ -68,6 +72,7 @@
                 <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
             </ul>
         </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script src="../js/script3.js"></script>
 </body>
 </html>

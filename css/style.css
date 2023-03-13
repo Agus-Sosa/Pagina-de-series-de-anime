@@ -371,6 +371,7 @@ nav li:nth-child(4) {
   background: #FA4753;
   display: flex;
   padding: 27px 50px;
+  z-index: 1;
   right: 47px;
   font-weight: bold;
   box-shadow: 10px 10px 10px black;
@@ -406,6 +407,8 @@ nav li:nth-child(4) {
     box-shadow: none;
     width: 100%;
     transition: .5s transform; }
+    .card img:hover {
+      transform: scale(1.05); }
   .card i {
     font-size: 23px;
     display: inline;
@@ -435,6 +438,7 @@ nav li:nth-child(4) {
 #boton-favoritos {
   position: fixed;
   display: flex;
+  z-index: 1;
   right: 285px;
   color: #FA4753;
   text-shadow: 1px 1px 20px black;
@@ -458,11 +462,13 @@ nav li:nth-child(4) {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: auto; }
+  margin: auto;
+  z-index: 1; }
   #contenedor-favorito div {
     background: #17181c;
     width: 30%;
     border-radius: 20px;
+    z-index: 1;
     box-shadow: 1px 0px 20px 7px black;
     height: 400px;
     position: fixed;

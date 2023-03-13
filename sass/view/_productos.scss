@@ -154,6 +154,7 @@
     background: $primary;
     display: flex;
     padding: 27px 50px;
+    z-index: 1;
     right: 47px;
     font-weight: bold;
     box-shadow: 10px 10px 10px black;
@@ -206,10 +207,10 @@
         width: 100%;
         transition: .5s transform;
         
-        // &:hover {
-        //     transform: scale(1.05);
-            
-        // }
+            &:hover {
+                transform: scale(1.05);
+                // opacity: 80%;
+                }
 
     }
     // &:hover {
@@ -224,12 +225,16 @@
     }
 }
 
+
 .imagen-card {
     overflow: hidden;
     transition: .5s all;
     // border-radius: 20px 20px 0px 0px;
     // &:hover {
     //     opacity: 60%;
+    // }
+    // &:hover {
+    //     transform: scale();
     // }
 }
 
@@ -257,6 +262,7 @@
 #boton-favoritos {
     position: fixed;
     display: flex;
+    z-index: 1;
     right: 285px;
     color: $primary;
     text-shadow: 1px 1px 20px black;
@@ -286,12 +292,14 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    z-index: 1;
 
 
     div {
         background: $secondary;
         width: 30%;
         border-radius: 20px;
+        z-index: 1;
         box-shadow: 1px 0px 20px 7px black;
         height: 400px;
         position: fixed;
